@@ -6,7 +6,7 @@ import os
 st.set_page_config(page_title="KH Analyzer Pro", layout="wide")
 
 # 2. كود إظهار اللوجو من الفولدر
-logo_path = "logo.png" # تأكد إن الاسم ده هو نفس اسم الصورة في الفولدر
+logo_path = "logo.png.png" # تأكد إن الاسم ده هو نفس اسم الصورة في الفولدر
 
 if os.path.exists(logo_path):
     st.image(logo_path, width=150)
@@ -29,4 +29,5 @@ uploaded_file = st.file_uploader("ارفع ملف الإكسيل هنا", type=[
 if uploaded_file:
     df = pd.read_excel(uploaded_file)
     st.success("✅ تم رفع البيانات")
+
     st.table(df)
